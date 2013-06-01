@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en"> 
+
+<head>
+	<title>C-Square</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta charset="utf-8">
+
+	<link rel = "stylesheet" href = "/static/bootstrap/css/bootstrap.css" media="screen">
+	<link rel = "stylesheet" href = "/static/bootstrap/css/bootstrap-responsive.css" media="screen">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/static/bootstrap/js/bootstrap.js"></script>
+
+	<style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 60px;
+      }
+
+      /* Custom container */
+      .container {
+        margin: 0 auto;
+        max-width: 1000px;
+      }
+      .container > hr {
+        margin: 60px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 80px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 100px;
+        line-height: 1;
+      }
+      .jumbotron .lead {
+        font-size: 24px;
+        line-height: 1.25;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+      /* Customize the navbar links to be fill the entire space of the .navbar */
+      .navbar .navbar-inner {
+        padding: 0;
+      }
+      .navbar .nav {
+        margin: 0;
+        display: table;
+        width: 100%;
+      }
+      .navbar .nav li {
+        display: table-cell;
+        width: 1%;
+        float: none;
+      }
+      .navbar .nav li a {
+        font-weight: bold;
+        text-align: center;
+        border-left: 1px solid rgba(255,255,255,.75);
+        border-right: 1px solid rgba(0,0,0,.1);
+      }
+      .navbar .nav li:first-child a {
+        border-left: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      .navbar .nav li:last-child a {
+        border-right: 0;
+        border-radius: 0 3px 3px 0;
+      }
+
+      /*Table modifications*/
+      .table th, .table td { 
+     	border-top: none; 
+ 		}
+    </style>
+
+</head>
+
+<body>
+	<!-- navbar -->
+	<div class="container">
+		<div class="masthead">
+			<h3 class="muted">C-Square</h3>
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="container">
+						<ul id="cstab" class="nav">
+							<li><a href="#">Dashboard</a></li>
+							<li><a href="#">Tools</a></li>
+							<li><a href="#">Profile</a></li>
+							<li><a href="#">Options</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(function() {
+	  			$('#cstab a[href="$active"]').tab('show');
+			})
+		</script>
+		<!-- navbar -->
+		<!-- jumbotron -->
+		<div class="jumbotron">
+			<div class="span3">
+				<div class="media">
+					<h4 class="media-heading">H. Chua</h4>
+					<hr>
+					<img src="/static/profile_img/teacher_dragon_1.png" class="media-object">
+					<hr>
+					<div class="media-body">
+						<table class="table table-condensed">
+							<tr>
+								<td>Health</td>
+								<td>7/7</td>
+							</tr>
+							<tr>
+								<td>Level</td>
+								<td>99</td>
+							</tr>
+							<tr>
+								<td>Experience</td>
+								<td>145/1000</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="span8" style="border-left: 1px solid #000000;">
+				<div class="media span2">
+					<h5 class="media-heading">Class 3A</h5>
+					<img src="/static/profile_img/student_dragon_1.jpg" style="height: 100px;width:150px;" class="img-polaroid">
+					<div class="media-body">Student Alert</div>
+				</div>
+				<div class="media span2">
+					<h5 class="media-heading">Class 3A</h5>
+					<img src="/static/profile_img/student_dragon_2.png" style="height: 100px;width:150px;" class="img-polaroid">
+					<div class="media-body">Student Alert</div>
+				</div>
+			</div>
+		</div>
+		<!-- jumbotron -->
+		<!-- footer -->
+		<div class="footer">
+		</div>
+		<!-- footer -->
+	</div>
+</body>
+
+
+</html>
