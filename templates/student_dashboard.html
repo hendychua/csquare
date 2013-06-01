@@ -55,8 +55,8 @@
           <a class="brand" href="">CSquare</a>
           <div class="nav-collapse collapse">
             <p class="navbar-text pull-right">
-                Welcome back, cylho
-                <img src="/static/profile_img/teacher_dragon_1.png" width="30" height="30"> 
+                Welcome back, {{ g.username }}
+                 <img src="/static/profile_img/teacher_dragon_1.png" width="30" height="30">
             </p>
             <ul class="nav">
                 <li class=""><a href="/dashboard">Dashboard</a></li>
@@ -66,13 +66,27 @@
                           <b class="caret"></b>
                       </a>
                       <ul class="dropdown-menu" aria-labelledby="classDrop" role="menu">
-					       <li role="presentation">
-                               <a href="" tabindex="-1" role="menuitem">1A-Mathematics</a>
-                           </li>
-                           <li role="presentation">
-                               <a href="" tabindex="-1" role="menuitem">3B-Science</a>
-                           </li>
+                          <li role="presentation">
+                                 <a href="/classes/1" tabindex="-1" role="menuitem">1A-Mathematics</a>
+                             </li>
+                          <li role="presentation">
+                                 <a href="/classes/2" tabindex="-1" role="menuitem">3B-Science</a>
+                          </li>
                       </ul>
+                  </li>
+                  <li class="dropdown">
+                      <a id="createDrop" class="dropdown-toggle" data-toggle="dropdown" role="button" href="">
+                            Create
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="createDrop" role="menu">
+                            <li role="presentation">
+                                <a href="" tabindex="-1" role="menuitem">A new class</a>
+                            </li>
+                            <li role="presentation">
+                                  <a href="" tabindex="-1" role="menuitem">A new mission!</a>
+                              </li>
+                        </ul>
                   </li>
             </ul>
           </div><!--/.nav-collapse -->

@@ -164,10 +164,7 @@ def assignment(objectId):
 @app.route("/students/<objectId>")
 @login_required
 def student(objectId):
-    if objectId == "1":
-        return render_template("student_dashboard.html")
-    else:
-        return "user " + objectId
+    return render_template("student_dashboard.html")
         
 @app.route("/class/create")
 @login_required
@@ -178,26 +175,13 @@ def create_class():
     elif g.usertype == "class_admin":
         return "Page to allow teachers to create classes"
         
-@app.route("/assignment/<objectId>")
+@app.route("/classes/<objectId>")
 @login_required
 def classes(objectId):
-    if g.usertype == "student":
-        # students will view class performance (by subjects)
-        # where they stand
-        # storyline
-        # and progress to goal
-        return "View an assignment in detail"
-
-    elif g.usertype == "class_admin":
-        # admins will view class performance (by subjects)
-        # where they stand
-        # storyline
-        # and progress to goal
-        return "View an assignment in detail"
-
-@app.route("/class")
-def class_pg():
-    return render_template("class_page.html")
+    if objectId=="1":
+        return render_template("class_1a_math.html")
+    elif objectId=="2":
+        return render_template("class_3b_science.html")
 
 if __name__ == "__main__":
     app.run()

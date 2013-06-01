@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+<head>
+	<title>C-Square</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta charset="utf-8">
+
+	<link rel = "stylesheet" href = "/static/bootstrap/css/bootstrap.css" media="screen">
+	<link rel = "stylesheet" href = "/static/bootstrap/css/bootstrap-responsive.css" media="screen">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/static/bootstrap/js/bootstrap.js"></script>
+
+	<!-- Le styles -->
+        <link href="../assets/css/bootstrap.css" rel="stylesheet">
+        <style type="text/css">
+          body {
+            font-size: 12px;
+            padding-top: 60px;
+            padding-bottom: 40px;
+          }
+          .sidebar-nav {
+            padding: 9px 0;
+          }
+
+          @media (max-width: 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+              float: none;
+              padding-left: 5px;
+              padding-right: 5px;
+            }
+        }
+            /*Table modifications*/
+      		.table th, .table td { 
+     				border-top: none; 
+ 			}
+ 			 </style>
+
+</head>
+
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="">CSquare</a>
+          <div class="nav-collapse collapse">
+            <p class="navbar-text pull-right">
+                Welcome back, {{ g.username }}
+                 <img src="/static/profile_img/teacher_dragon_1.png" width="30" height="30">
+            </p>
+            <ul class="nav">
+                <li class=""><a href="/dashboard">Dashboard</a></li>
+                  <li class="dropdown">
+                      <a id="classDrop" class="dropdown-toggle" data-toggle="dropdown" role="button" href="">
+                          My Classes
+                          <b class="caret"></b>
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="classDrop" role="menu">
+                          <li role="presentation">
+                                 <a href="/classes/1" tabindex="-1" role="menuitem">1A-Mathematics</a>
+                             </li>
+                          <li role="presentation">
+                                 <a href="/classes/2" tabindex="-1" role="menuitem">3B-Science</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li class="dropdown">
+                      <a id="createDrop" class="dropdown-toggle" data-toggle="dropdown" role="button" href="">
+                            Create
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="createDrop" role="menu">
+                            <li role="presentation">
+                                <a href="" tabindex="-1" role="menuitem">A new class</a>
+                            </li>
+                            <li role="presentation">
+                                  <a href="" tabindex="-1" role="menuitem">A new mission!</a>
+                              </li>
+                        </ul>
+                  </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div> <!-- end navbar navbar-inverse navbar-fixed-top -->
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span1"></div>
+            <div class="span3">
+                <div class="media">
+					<img src="/static/profile_img/teacher_dragon_1.png" class="media-object" width="100" height="100">
+					<div class="media-body">
+						<table class="table table-striped">
+						    <tr>
+								<td>Class</td>
+								<td>1A-Mathematics</td>
+							</tr>
+							<tr>
+								<td>Master</td>
+								<td>cylho</td>
+							</tr>
+							<tr>
+								<td>Number of Students</td>
+								<td>20</td>
+							</tr>
+							<tr>
+								<td>Missions Available</td>
+								<td>5</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<hr>
+				<h4 style="margin-top: 0px;">Rankings</h4>
+				<ol>
+					<li><a href="">maryhadalittlelamb</a> (310 points)</li>
+					<li><a href="">kWing0809</a> (308 points)</li>
+					<li><a href="">T. Jam (300</a> points)</li>
+					<li><a href="">whatsMyName</a> (280 points)</li>
+					<li><a href="">NataliePortman</a> (273 points)</li>
+				</ol>
+            </div>
+            <div class="span7">
+                <div class="span12">
+                    <h6>Story:</h6>
+                    <i>By leveraging on the citizens' ignorance on mathematics, the evil conqueror has gatherd an army and planned to dominate the world.</i><br>
+                    <h6>Goal:</h6>
+                    <i>Destroy the evil commander and save the world by acculumating a tota of 330 points!<i><br>
+                    <hr>
+                </div>
+                <div class="span12">
+                	<h6>Students</h6>
+            	</div>
+            	<div class="row">
+  				<div class="media span3" style="margin-top:0px;">
+					<a class="pull-left" href="#">
+						<img class="media-object img-polaroid" style="height:44px;width:44px;" src="/static/profile_img/student_dragon_1.jpg">
+					</a>
+					<div class="media-body">
+						<h5 class="media-heading">L. Yang</h5>
+						<small><em>180/330 points #17</small></em>
+					</div>
+				</div>
+				<div class="media span3" style="margin-top:0px;">
+					<a class="pull-left" href="#">
+						<img class="media-object img-polaroid" style="height:44px;width:44px;" src="/static/profile_img/student_dragon_2.png">
+					</a>
+					<div class="media-body">
+						<h5 class="media-heading">KYKong</h5>
+						<small><em>210/330 points #14</small></em></div>
+				</div>
+				<div class="media span3" style="margin-top:0px">
+					<a class="pull-left" href="#">
+						<img class="media-object img-polaroid" style="height:44px;width:44px;" src="/static/profile_img/student_dragon_2.png">
+					</a>
+					<div class="media-body">
+						<h5 class="media-heading">T. Geraldine</h5>
+						<small><em>100/330 points #20</small></em></div>
+				</div>
+				<div class="media span3" style="margin-top:0px;">
+					<a class="pull-left" href="#">
+						<img class="media-object img-polaroid" style="height:44px;width:44px;" src="/static/profile_img/student_dragon_2.png">
+					</a>
+					<div class="media-body">
+						<h5 class="media-heading">yShun</h5>
+						<small><em>250/330 points #10</small></em></div>
+				</div>
+			</div><div class="row">
+				<div class="media span3" style="margin-top:0px;m">
+					<a class="pull-left" href="#">
+						<img class="media-object img-polaroid" style="height:44px;width:44px;" src="/static/profile_img/student_dragon_2.png">
+					</a>
+					<div class="media-body">
+						<h5 class="media-heading">H. Vin</h5>
+						<small><em>120/330 points #19</small></em></div>
+				</div>
+				<div class="media span3" style="margin-top:0px;">
+					<a class="pull-left" href="#">
+						<img class="media-object img-polaroid" style="height:44px;width:44px;" src="/static/profile_img/student_dragon_2.png">
+					</a>
+					<div class="media-body">
+						<h5 class="media-heading">kWing0809</h5>
+						<small><em>308/330 points #2</small></em></div>
+				</div>
+				<div class="media span3" style="margin-top:0px;">
+					<a class="pull-left" href="#">
+						<img class="media-object img-polaroid" style="height:44px;width:44px;" src="/static/profile_img/student_dragon_2.png">
+					</a>
+					<div class="media-body">
+						<h5 class="media-heading">S. Yin</h5>
+						<small><em>220/330 points #12</small></em></div>
+				</div>
+				<div class="media span3" style="margin-top:0px;">
+					<a class="pull-left" href="#">
+						<img class="media-object img-polaroid" style="height:44px;width:44px;" src="/static/profile_img/student_dragon_2.png">
+					</a>
+					<div class="media-body">
+						<h5 class="media-heading">T. Ming</h5>
+						<small><em>240/330 points #11</small></em>
+					</div>
+				</div>
+			</div>
+			<div class="span12">
+			    <br>
+       			 <span><a href="">Show More..</a></span>
+       		</div>
+       		<hr>
+           	<div class="span12">
+           	    <div class="row">
+           			<h6>Missions</h6>
+           			<ul class="thumbnails">
+					    <li class="span3">
+						    <a href="#" class="thumbnail">
+							    <img src="/static/profile_img/grammar_dragon.gif">
+						    </a>
+						    <h4>Double digit Multiplication</h4>
+						    <div class="media-body">
+						        12/20 completed
+							    <div class="progress">
+  									<div class="bar" style="width: 60%;">
+  									</div>
+  							    </div>
+  						    </div>				
+  					    </li>
+  					    <li class="span3">
+						    <a href="#" class="thumbnail">
+							    <img src="/static/profile_img/verbon_dragon.jpg" style="height:113px;">
+						    </a>
+						    <h4>Mental Sums 6</h4>
+						    <div class="media-body">
+						        20/20 completed 
+							    <div class="progress progress-success">
+  								    <div class="bar" style="width: 100%;">
+  								    </div>
+  							    </div>
+  						    </div>				
+  					    </li>
+  					    <li class="span3">
+						    <a href="#" class="thumbnail">
+							    <img src="/static/profile_img/verbon_dragon.jpg" style="height:113px;">
+						    </a>
+						    <h4>Mental Sums 5</h4>
+						    <div class="media-body">
+						        20/20 completed 
+							    <div class="progress progress-success">
+  								    <div class="bar" style="width: 100%;">
+  								    </div>
+  							    </div>
+  						    </div>				
+  					    </li>
+  				    </ul>
+  				</div>
+                <div class="span12">
+           			 <span><a href="">Show More..</a></span>
+           		</div>
+            </div>
+
+    </div> <!-- end of container-fluid -->
+		
+		<!-- footer -->
+		<div class="footer">
+		</div>
+		<!-- footer -->
+	</div>
+</body>
+
+
+</html>

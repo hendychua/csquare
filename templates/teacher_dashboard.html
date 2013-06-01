@@ -34,6 +34,10 @@
               padding-right: 5px;
             }
           }
+          /*Table modifications*/
+      		.table th, .table td { 
+     				border-top: none; 
+ 			}
         </style>
 
 </head>
@@ -54,18 +58,19 @@
                  <img src="/static/profile_img/teacher_dragon_1.png" width="30" height="30">
             </p>
             <ul class="nav">
-                <li class=""><a href="#">Dashboard</a></li>
+                <li class=""><a href="/dashboard">Dashboard</a></li>
                   <li class="dropdown">
                       <a id="classDrop" class="dropdown-toggle" data-toggle="dropdown" role="button" href="">
                           My Classes
                           <b class="caret"></b>
                       </a>
                       <ul class="dropdown-menu" aria-labelledby="classDrop" role="menu">
-                          {% for c in g.classes %}
-						        <li role="presentation">
-                                    <a href="" tabindex="-1" role="menuitem">{{ c['class_name'] }}</a>
-                                </li>
-						  {% endfor %}
+                          <li role="presentation">
+                                 <a href="/classes/1" tabindex="-1" role="menuitem">1A-Mathematics</a>
+                             </li>
+                          <li role="presentation">
+                                 <a href="/classes/2" tabindex="-1" role="menuitem">3B-Science</a>
+                          </li>
                       </ul>
                   </li>
                   <li class="dropdown">
