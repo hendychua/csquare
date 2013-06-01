@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+<head>
+	<title>C-Square</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta charset="utf-8">
+
+	<link rel = "stylesheet" href = "/static/bootstrap/css/bootstrap.css" media="screen">
+	<link rel = "stylesheet" href = "/static/bootstrap/css/bootstrap-responsive.css" media="screen">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/static/bootstrap/js/bootstrap.js"></script>
+
+	<style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 60px;
+      }
+
+      /* Custom container */
+      .container {
+        margin: 0 auto;
+        max-width: 1000px;
+      }
+      .container > hr {
+        margin: 60px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 80px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 100px;
+        line-height: 1;
+      }
+      .jumbotron .lead {
+        font-size: 24px;
+        line-height: 1.25;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+      /* Supporting marketing content */
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+    </style>
+
+</head>
+
+<body>
+	<!-- navbar -->
+	<div class="container">
+		<div class="masthead">
+			<h3 class="muted">C-Square</h3>
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="container">
+						<ul id="cstab" class="nav">
+							<li><a href="{{url_for('index')}}">Home</a></li>
+							<li><a href="{{url_for('about_us')}}">About Us</a></li>
+							</ul>
+						<ul class="nav pull-right">
+							<li class="dropdown"><a class="dropdown-toggle"  data-toggle="dropdown" href="#">Login/Register<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<form style="padding:5px 10px;"class="form" method="post" action="{{url_for('login_validation')}}">
+									<hr>
+									<input type='hidden' name='submitted' id='submitted' value='1'/>
+									<input placeholder="Username" type = "text" class = "input span3" id = "username" name = "username">
+									<input placeholder="Password" type = "password" class = "input span3" id = "password" name = "password">
+									<center><button type="submit" class="btn">Login</button></center>
+									<br><center><a href="">Register</a></center>
+								</form>
+							</ul>
+						</ul>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(function() {
+	  			$('#cstab a[href="$active"]').tab('show');
+			})
+		</script>
+		<!-- navbar -->
+		<!-- jumbotron -->
+		<div class="jumbotron">
+			<h1>C-Square</h1>
+			<p class="lead">Gamify the Classroom with C-Square. Use games to bring across hard to remember concepts. And most importantly, let your students immerse themselves in a fun, learning experience while ensuring that you, as a teacher, can monitor students' progress easily!</p>
+		</div>
+		<!-- jumbotron -->
+		<!-- footer -->
+		<div class="footer">
+		</div>
+		<!-- footer -->
+	</div>
+</body>
+
+
+</html>
