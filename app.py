@@ -83,68 +83,68 @@ def dashboard():
                 url = PARSE_API_URL + "/classes/subject" + "/" + c['subject_id']['objectId']
                 r = requests.get(url, headers=PARSE_HEADERS)
                 class_subjects.append(r.json()['subject_title'])
-                
-            top_classes_student_count = []
-            top_classes_assignments = []
-            i = 0
-            for c in classes:
-                if i == 3:
-                    break
-                c = classes[i]
-                url = PARSE_API_URL + "/classes/classes_student_assoc"
-                params = dict(where=json.dumps(dict(class_id={
-                         "__type": "Pointer",
-                         "className": "classes",
-                         "objectId": c['objectId']
-                       })), count=1, limit=0)
-                r = requests.get(url, params=params, headers=PARSE_HEADERS)
-                top_classes_student_count.append(r.json()['count'])
-                
-                url = PARSE_API_URL + "/classes/assignment_class_assoc"
-                params = dict(where=json.dumps(dict(class_id={
-                         "__type": "Pointer",
-                         "className": "classes",
-                         "objectId": c['objectId']
-                       })))
-                r = requests.get(url, params=params, headers=PARSE_HEADERS)
-                top_classes_assignments.append(r.json()['results'])
-                
-                i+=1
-            
-            i=0
-            top_classes_assignments_completion_ratio = []
-            for assignment_list in top_classes_assignments:
-                ratio_list = []
-                for assignment in assignment_list:
-                    if i==2:
-                        break
-                    url = PARSE_API_URL + "/classes/assignment_student_assoc"
-                    params = dict(where=json.dumps(dict(assignment_id={
-                             "__type": "Pointer",
-                             "className": "assignments",
-                             "objectId": assignment['assignment_id']
-                           })))
-                    r = requests.get(url, params=params, headers=PARSE_HEADERS)
-                    students_assigned = len(r.json()['results'])
-                    students_completed = 0
-                    for row in r.json()['results']:
-                        if row['assignment_status'] == "done":
-                            students_completed += 1
-                    completed_assigned_ratio = (students_completed, students_assigned)
-                    ratio_list.append(completed_assigned_ratio)
-                    i+=1
-
-                top_classes_assignments_completion_ratio.append(ratio_list)
+            #     
+            # top_classes_student_count = []
+            # top_classes_assignments = []
+            # i = 0
+            # for c in classes:
+            #     if i == 3:
+            #         break
+            #     c = classes[i]
+            #     url = PARSE_API_URL + "/classes/classes_student_assoc"
+            #     params = dict(where=json.dumps(dict(class_id={
+            #              "__type": "Pointer",
+            #              "className": "classes",
+            #              "objectId": c['objectId']
+            #            })), count=1, limit=0)
+            #     r = requests.get(url, params=params, headers=PARSE_HEADERS)
+            #     top_classes_student_count.append(r.json()['count'])
+            #     
+            #     url = PARSE_API_URL + "/classes/assignment_class_assoc"
+            #     params = dict(where=json.dumps(dict(class_id={
+            #              "__type": "Pointer",
+            #              "className": "classes",
+            #              "objectId": c['objectId']
+            #            })))
+            #     r = requests.get(url, params=params, headers=PARSE_HEADERS)
+            #     top_classes_assignments.append(r.json()['results'])
+            #     
+            #     i+=1
+            # 
+            # i=0
+            # top_classes_assignments_completion_ratio = []
+            # for assignment_list in top_classes_assignments:
+            #     ratio_list = []
+            #     for assignment in assignment_list:
+            #         if i==2:
+            #             break
+            #         url = PARSE_API_URL + "/classes/assignment_student_assoc"
+            #         params = dict(where=json.dumps(dict(assignment_id={
+            #                  "__type": "Pointer",
+            #                  "className": "assignments",
+            #                  "objectId": assignment['assignment_id']
+            #                })))
+            #         r = requests.get(url, params=params, headers=PARSE_HEADERS)
+            #         students_assigned = len(r.json()['results'])
+            #         students_completed = 0
+            #         for row in r.json()['results']:
+            #             if row['assignment_status'] == "done":
+            #                 students_completed += 1
+            #         completed_assigned_ratio = (students_completed, students_assigned)
+            #         ratio_list.append(completed_assigned_ratio)
+            #         i+=1
+            # 
+            #     top_classes_assignments_completion_ratio.append(ratio_list)
                 
             g.classes = classes
             g.class_subjects = class_subjects
-            g.top_classes_student_count = top_classes_student_count
-            g.top_classes_assignments = top_classes_assignments
-            g.top_classes_assignments_completion_ratio = top_classes_assignments_completion_ratio
-            print g.classes
-            print g.class_subjects
-            print g.top_classes_student_count
-            print g.top_classes_assignments
+            # g.top_classes_student_count = top_classes_student_count
+            # g.top_classes_assignments = top_classes_assignments
+            # g.top_classes_assignments_completion_ratio = top_classes_assignments_completion_ratio 
+            
+            g.top_classes_student_count = [20, 33]
+            g.top_classes_assignments = [xrange(5), xrange(7)]
+
             return render_template("teacher_dashboard.html")
 
 @app.route("/assignment/create")
@@ -156,19 +156,15 @@ def create_assignment():
     elif g.usertype == "class_admin":
         return "Page to allow teachers to create assignments"
 
-@app.route("/assignment/<objectId>")
+@app.route("/assignments/<objectId>")
 @login_required
 def assignment(objectId):
-    if g.usertype == "student":
-        # student will have the option to submit the assignment after completion
-        #if assignment completed, student views his results
-        return "View an assignment in detail"
-
-    elif g.usertype == "class_admin":
-        # admin views the assignment
-        # shows details such as completion rate, who has not completed it
-        # avg score, score rankings
-        return "View an assignment in detail"
+    return "assignment " + objectId
+    
+@app.route("/users/<objectId>")
+@login_required
+def users(objectId):
+    return "user " + objectId
         
 @app.route("/class/create")
 @login_required

@@ -16,7 +16,6 @@
 	<script type="text/javascript" src="/static/bootstrap/js/bootstrap.js"></script>
 	
 	<!-- Le styles -->
-        <link href="../assets/css/bootstrap.css" rel="stylesheet">
         <style type="text/css">
           body {
             font-size: 12px;
@@ -52,6 +51,7 @@
           <div class="nav-collapse collapse">
             <p class="navbar-text pull-right">
                 Welcome back, {{ g.username }}
+                 <img src="/static/profile_img/teacher_dragon_1.png" width="30" height="30">
             </p>
             <ul class="nav">
                 <li class=""><a href="#">Dashboard</a></li>
@@ -82,7 +82,6 @@
                               </li>
                         </ul>
                   </li>
-                  <li><a href="">Profile</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -94,9 +93,15 @@
         <div class="row-fluid">
             <div class="span1"></div>
             <div class="span3">
-                <h3>{{ c['class_name'] }}</h3>
+                <h5>{{ c['class_name'] }}</h5>
+                {% if loop.index0==0 %}
+                <b>Story:</b> <i>By leveraging on the citizens' ignorance on mathematics, the evil conqueror has gatherd an army and planned to dominate the world.</i><br>
+                <b>Goal:</b> <i>{{ c['goal'] }}</i>
+                {% else %}
+                <b>Story:</b> <i>The evil scientist has invented a time machine to go back to the past and destroy humans. Stop him by accumulating knowledge in science!</i><br>
+                <b>Goal:</b> <i>You will be considered capable of stopping the evil scientist by scoring 300 points for this class!</i>
+                {% endif %}
                 <div class="media">
-					<img src="/static/profile_img/teacher_dragon_1.png" class="media-object">
 					<div class="media-body">
 						<table class="table table-bordered table-striped">
 							<tr>
@@ -114,9 +119,42 @@
 						</table>
 					</div>
 				</div>
+				<div class="well">
+				    <h6>Latest missions</h6>
+				    {% if loop.index0==0 %}
+    				<a href="/assignments/1">Double digit Mutiplication</a> - 12/20 students completed
+    				<div class="progress">
+                        <div class="bar" style="width: 60%;"></div>
+                    </div>
+                    {% else %}
+    				<a href="/assignments/4">Understanding different types of plants</a> - 10/30 students completed
+    				<div class="progress">
+                        <div class="bar bar-warning" style="width: 30%;"></div>
+                    </div>
+                    {% endif %}
+                </div>
             </div>
             <div class="span7">
-                dsfsdf
+                <div class="well">
+                    {% if loop.index0==0 %}
+                    <h6>4 hours ago</h6>
+                        <img width="30" height="30" src="/static/profile_img/student_dragon_2.png"> <a href="/users/1">johnthefirstgrader</a> just completed mission <a href="/assignments/1">"Double digit Multiplication"</a> and scored 70/100 points. He is now 60 class points away from reaching the class goal.
+                    <hr>
+                    <h6>5 hours ago</h6>
+                        <img width="30" height="30" src="/static/profile_img/student_dragon_1.jpg"> <a href="/users/2">maryhadalittlelamb</a> just completed mission <a href="/assignments/2">"Mental Sums 6"</a> and scored 100/100 points. She is now the highest ranked student in the class!
+                    <hr>
+                    <h6>6 hours ago</h6>
+                    <img width="30" height="30" src="/static/profile_img/student_heroes_1.jpg"> <a href="/users/3">simon1995</a> scored only 50/100 for the mission <a href="/assignments/3">"Mental Sums 5"</a>. Motivate him!
+                    <hr>
+                    {% else %}
+                    <h6>6 hours ago</h6>
+                        <img width="30" height="30" src="/static/profile_img/student_dragon_2.png"> <a href="/users/4">henrytheking</a> just completed mission <a href="/assignments/4">"Understanding different types of plants"</a> and scored 20/100 points. Motivate him!
+                    <hr>
+                    <h6>10 hours ago</h6>
+                        <img width="30" height="30" src="/static/profile_img/student_dragon_1.jpg"> <a href="/users/5">emoboi93</a> asks for additional help on the mission <a href="/assignments/4">"Understanding different types of plants"</a>.
+                    <hr>
+                    {% endif %}
+                </div>
             </div>
             <div class="span1"></div>
         </div>
