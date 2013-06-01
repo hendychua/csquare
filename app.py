@@ -200,6 +200,10 @@ def classes(objectId):
 def student_db():
     return render_template("student_dashboard.html")
 
+@app.route("/class_maths")
+def math_class_pg():
+	return render_template("class_page_math.html")
+
 @app.route("/class")
 def class_pg():
     return render_template("class_page.html")
