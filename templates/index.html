@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en"> 
 
 <head>
@@ -67,19 +67,19 @@
 				<div class="navbar-inner">
 					<div class="container">
 						<ul id="cstab" class="nav">
-							<li><a href="#">Home</a></li>
-							<li><a href="#">About Us</a></li>
+							<li><a href="{{url_for('index')}}">Home</a></li>
+							<li><a href="{{url_for('about_us')}}">About Us</a></li>
 							</ul>
 						<ul class="nav pull-right">
 							<li class="dropdown"><a class="dropdown-toggle"  data-toggle="dropdown" href="#">Login/Register<b class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<form style="padding:5px 10px;"class="form" method = "post" action = "">
+								<form style="padding:5px 10px;"class="form" method="post" action="{{url_for('login_validation')}}">
 									<hr>
 									<input type='hidden' name='submitted' id='submitted' value='1'/>
-									<input placeholder="Email" type = "text" class = "input span3" id = "email" name = "email">
+									<input placeholder="Username" type = "text" class = "input span3" id = "username" name = "username">
 									<input placeholder="Password" type = "password" class = "input span3" id = "password" name = "password">
-									<center><button type="submit" class="btn">Login</button>
-									<button type="submit" class="btn">Register</button></center>
+									<center><button type="submit" class="btn">Login</button></center>
+									<br><center><a href="">Register</a></center>
 								</form>
 							</ul>
 						</ul>
@@ -97,7 +97,7 @@
 		<!-- jumbotron -->
 		<div class="jumbotron">
 			<h1>C-Square</h1>
-			<p class="lead">Gamify the Classroom with C-Square. Use games to bring across hard to remember concepts. And most importantly, let your students immerse themselves in a fun, learning experience.</p>
+			<p class="lead">Gamify the Classroom with C-Square. Use games to bring across hard to remember concepts. And most importantly, let your students immerse themselves in a fun, learning experience while ensuring that you, as a teacher, can monitor students' progress easily!</p>
 		</div>
 		<!-- jumbotron -->
 		<!-- footer -->

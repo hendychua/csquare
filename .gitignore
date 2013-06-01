@@ -12,3 +12,8 @@ Thumbs.db
 # Compiled source #
 ###################
 *.pyc
+
+# Others #
+##########
+config.cfg
+parse_keys.py
