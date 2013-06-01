@@ -161,10 +161,13 @@ def create_assignment():
 def assignment(objectId):
     return "assignment " + objectId
     
-@app.route("/users/<objectId>")
+@app.route("/students/<objectId>")
 @login_required
-def users(objectId):
-    return "user " + objectId
+def student(objectId):
+    if objectId == "1":
+        return render_template("student_dashboard.html")
+    else:
+        return "user " + objectId
         
 @app.route("/class/create")
 @login_required
@@ -191,6 +194,10 @@ def classes(objectId):
         # storyline
         # and progress to goal
         return "View an assignment in detail"
+
+@app.route("/class")
+def class_pg():
+    return render_template("class_page.html")
 
 if __name__ == "__main__":
     app.run()

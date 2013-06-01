@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en"> 
+
+<head>
+	<title>C-Square</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta charset="utf-8">
+
+	<link rel = "stylesheet" href = "/static/bootstrap/css/bootstrap.css" media="screen">
+	<link rel = "stylesheet" href = "/static/bootstrap/css/bootstrap-responsive.css" media="screen">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/static/bootstrap/js/bootstrap.js"></script>
+
+	<style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 60px;
+      }      
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 100px;
+        line-height: 1;
+      }
+      .jumbotron .lead {
+        font-size: 24px;
+        line-height: 1.25;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+      /* Customize the navbar links to be fill the entire space of the .navbar */
+
+      .navbar .navbar-inner {
+        padding: 0;
+      }
+      .navbar .nav {
+        margin: 0;
+        display: table;
+        width: 100%;
+      }
+      .navbar .nav li {
+        display: table-cell;
+        width: 1%;
+        float: none;
+      }
+      .navbar .nav li a {
+        font-weight: bold;
+        text-align: center;
+        border-left: 1px solid rgba(255,255,255,.75);
+        border-right: 1px solid rgba(0,0,0,.1);
+      }
+      .navbar .nav li:first-child a {
+        border-left: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      .navbar .nav li:last-child a {
+        border-right: 0;
+        border-radius: 0 3px 3px 0;
+      }
+
+      /*Table modifications*/
+      .table th, .table td { 
+     	border-top: none; 
+ 		}
+
+ 	  /*Media modifications*/
+ 		.media{
+ 			margin-top: 0px;
+ 		}
+    </style>
+
+</head>
+
+<body>
+	<!-- navbar -->
+	<div class="container">
+		<h5>Welcome Back, K Wing</h5>
+		<div class="masthead">
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="container">
+						<ul id="cstab" class="nav">
+							<li><a href="#">Dashboard</a></li>
+							<li class="dropdown"><a class="dropdown-toggle"  data-toggle="dropdown" href="#">My Classes<b class="caret"></b></a>
+								<ul id="dd" class="dropdown-menu">
+									<li><a href="#">Maths</a></li>
+									<li><a href="#">Science</a></li>
+									<li><a href="#">English</a></li>
+									<li><a href="#">Chinese</a></li>
+								</ul></li>
+							<li><a href="#">Profile</a></li>
+							<li><a href="#">Options</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(function() {
+	  			$('#cstab a[href="$active"]').tab('show');
+			})
+		</script>
+		<!-- navbar -->
+		<!-- jumbotron Class 3A -->
+		<div class="container">
+				<h3 class="muted">Class 3A - English</h3>
+
+			</div>
+			<div class="span2">
+				<div class="media">
+					<img src="/static/profile_img/teacher_dragon_1.png" class="media-object">
+					<div class="media-body">
+						<table class="table table-condensed">
+							<tr>
+								<td>Master</td>
+								<td>C Hendy</td>
+							</tr>
+							<tr>
+								<td>Health</td>
+								<td>7/7</td>
+							</tr>
+							<tr>
+								<td>Level</td>
+								<td>99</td>
+							</tr>
+							<tr>
+								<td>Experience</td>
+								<td>145/1000</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<br>
+				<br>
+				<div class="media">
+				<h5 class="media-heading">Boss Fight<br>Attack in 13 days!</h5>
+				<img src="/static/profile_img/boss_dragon_1.jpg" style="height: 200px;width:200px;" class="media-object img-rounded">
+				
+			</div>
+			</div>
+			<div class="span7 pagination-centered" style="border-left: 1px solid #D8D8D8;">
+				<div class="media span3">
+					<a class="pull-left" href="#">
+						<img class="media-object img-polaroid" style="height:44px;width:44px;" src="/static/profile_img/student_dragon_1.jpg">
+					</a>
+					<div class="media-body">
+						<h5 class="media-heading">L. Yang</h5>
+						<small><em>Level 5 - 36 EX to Level 6</small></em></div>
+				</div>
+				<div class="media span3">
+					<a class="pull-left" href="#">
+						<img class="media-object img-polaroid" style="height:44px;width:44px;" src="/static/profile_img/student_dragon_2.png">
+					</a>
+					<div class="media-body">
+						<h5 class="media-heading">K. Wing</h5>
+						<small><em>Level 5 - 16 EX to Level 6</small></em></div>
+				</div>
+				<div class="media span3">
+					<a class="pull-left" href="#">
+						<img class="media-object img-polaroid" style="height:44px;width:44px;" src="/static/profile_img/student_dragon_2.png">
+					</a>
+					<div class="media-body">
+						<h5 class="media-heading">T. Geraldine</h5>
+						<small><em>Level 5 - 40 EX to Level 6</small></em></div>
+				</div>
+				<div class="media span3">
+					<a class="pull-left" href="#">
+						<img class="media-object img-polaroid" style="height:44px;width:44px;" src="/static/profile_img/student_dragon_2.png">
+					</a>
+					<div class="media-body">
+						<h5 class="media-heading">Nat</h5>
+						<small><em>Level 6 - 70 EX to Level 7</small></em></div>
+				</div>
+				<div class="media span3">
+					<a class="pull-left" href="#">
+						<img class="media-object img-polaroid" style="height:44px;width:44px;" src="/static/profile_img/student_dragon_2.png">
+					</a>
+					<div class="media-body">
+						<h5 class="media-heading">H. Vin</h5>
+						<small><em>Level 5 - 25 EX to Level 6</small></em></div>
+				</div>
+				<div class="media span3">
+					<a class="pull-left" href="#">
+						<img class="media-object img-polaroid" style="height:44px;width:44px;" src="/static/profile_img/student_dragon_2.png">
+					</a>
+					<div class="media-body">
+						<h5 class="media-heading">A. Mia</h5>
+						<small><em>Level 6 - 89 EX to Level 7</small></em></div>
+				</div>
+				<div class="media span3">
+					<a class="pull-left" href="#">
+						<img class="media-object img-polaroid" style="height:44px;width:44px;" src="/static/profile_img/student_dragon_2.png">
+					</a>
+					<div class="media-body">
+						<h5 class="media-heading">S. Yin</h5>
+						<small><em>Level 5 - 91 EX to Level 6</small></em></div>
+				</div>
+				<div class="media span3">
+					<a class="pull-left" href="#">
+						<img class="media-object img-polaroid" style="height:44px;width:44px;" src="/static/profile_img/student_dragon_2.png">
+					</a>
+					<div class="media-body">
+						<h5 class="media-heading">T. Ming</h5>
+						<small><em>Level 5 - 1 EX to Level 6</small></em>
+					</div>
+				</div>
+				<br>
+				<br>
+				<a class="span6 text-center">Show All</a>
+				<br>
+				<br>
+				<h4 class="span6 text-center">Training Missions</h4>
+				<div class="span6">
+				<table class="table table-condensed">
+							<tr>
+								<td><div class="span3"><a href="#">Take Out Grammar Dragon!</a></div></td><td>
+								<div class="progress progress-warning span3">
+  									<div class="bar" style="width: 60%;"></div>
+								</div></td>
+							</tr>
+							<tr>
+								<td><div class="span3"><a href="#">Take Out Verbon!</a></div></td><td>
+								<div class="progress progress-warning span3">
+  									<div class="bar" style="width: 20%;"></div>
+								</div></td>
+							</tr>
+							<tr>
+								<td><div class="span3"><a href="#">Take Out Adjectigon!</a></div></td><td>
+								<div class="progress progress-warning span3">
+  									<div class="bar" style="width: 100%;"><span>Defeated!</span></div>
+								</div></td>
+							</tr>
+							<tr>
+								<td><div class="span3"><a href="#">Take Out Tenzor!</a></div></td><td>
+								<div class="progress progress-warning span3">
+  									<div class="bar" style="width: 100%;"><span>Defeated!</span></div>
+								</div></td>
+							</tr>
+						</table>
+						<a class="btn btn-success">Add Assignment</a>
+					</div>
+			</div>
+			<div class="span2 pagination-left" style="border-left: 1px solid #D8D8D8;padding-left: 10px;">
+				<h4 style="margin-top: 0px;">Standings</h4>
+				<dl>
+					<dt>K. Wing</dt>
+					<dd>198 hits | Peak: #1</dd>
+					<dt>L. Yang</dt>
+					<dd>198 hits | Peak: #2</dd>
+					<dt>T. Jam</dt>
+					<dd>191 hits | Peak: #2</dd>
+					<dt>H. Vin</dt>
+					<dd>186 hits | Peak: #3</dd>
+					<dt>Natalie</dt>
+					<dd>186 hits | Peak: #1</dd>
+				</dl>
+				<a class="btn btn-success pagination-centered">Reset</a>
+			</div>
+		</div>
+		<!-- jumbotron class 3A-->
+		
+		<!-- footer -->
+		<div class="footer">
+		</div>
+		<!-- footer -->
+	</div>
+</body>
+
+
+</html>
