@@ -15,218 +15,245 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="/static/bootstrap/js/bootstrap.js"></script>
 
-	<style type="text/css">
-      body {
-        padding-top: 20px;
-        padding-bottom: 60px;
-      }
+	<!-- Le styles -->
+        <link href="../assets/css/bootstrap.css" rel="stylesheet">
+        <style type="text/css">
+          body {
+            font-size: 12px;
+            padding-top: 60px;
+            padding-bottom: 40px;
+          }
+          .sidebar-nav {
+            padding: 9px 0;
+          }
 
-      /* Custom container */
-      .container {
-        margin: 0 auto;
-        max-width: 1000px;
-      }
-      .container > hr {
-        margin: 60px 0;
-      }
-
-      /* Main marketing message and sign up button */
-      .jumbotron {
-        text-align: center;
-      }
-      .jumbotron h1 {
-        font-size: 100px;
-        line-height: 1;
-      }
-      .jumbotron .lead {
-        font-size: 24px;
-        line-height: 1.25;
-      }
-      .jumbotron .btn {
-        font-size: 21px;
-        padding: 14px 24px;
-      }
-
-      /* Customize the navbar links to be fill the entire space of the .navbar */
-
-      .navbar .navbar-inner {
-        padding: 0;
-      }
-      .navbar .nav {
-        margin: 0;
-        display: table;
-        width: 100%;
-      }
-      .navbar .nav li {
-        display: table-cell;
-        width: 1%;
-        float: none;
-      }
-      .navbar .nav li a {
-        font-weight: bold;
-        text-align: center;
-        border-left: 1px solid rgba(255,255,255,.75);
-        border-right: 1px solid rgba(0,0,0,.1);
-      }
-      .navbar .nav li:first-child a {
-        border-left: 0;
-        border-radius: 3px 0 0 3px;
-      }
-      .navbar .nav li:last-child a {
-        border-right: 0;
-        border-radius: 0 3px 3px 0;
-      }
-
-      /*Table modifications*/
-      .table th, .table td { 
-     	border-top: none; 
- 		}
-
- 	  /*Media modifications*/
- 		.media{
- 			margin-top: 0px;
- 		}
-    </style>
+          @media (max-width: 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+              float: none;
+              padding-left: 5px;
+              padding-right: 5px;
+            }
+        }
+            /*Table modifications*/
+      		.table th, .table td { 
+     				border-top: none; 
+ 			}
+ 			 </style>
 
 </head>
 
 <body>
-	<!-- navbar -->
-	<div class="container">
-		<h5>Welcome Back, K Wing</h5>
-		<div class="masthead">
-			<div class="navbar">
-				<div class="navbar-inner">
-					<div class="container">
-						<ul id="cstab" class="nav">
-							<li><a href="#">Dashboard</a></li>
-							<li class="dropdown"><a class="dropdown-toggle"  data-toggle="dropdown" href="#">My Classes<b class="caret"></b></a>
-								<ul id="dd" class="dropdown-menu">
-									<li><a href="#">Maths</a></li>
-									<li><a href="#">Science</a></li>
-									<li><a href="#">English</a></li>
-									<li><a href="#">Chinese</a></li>
-								</ul></li>
-							<li><a href="#">Profile</a></li>
-							<li><a href="#">Options</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<script type="text/javascript">
-			$(function() {
-	  			$('#cstab a[href="$active"]').tab('show');
-			})
-		</script>
-		<!-- navbar -->
-		<!-- jumbotron Class English -->
-		<div class="container">
-			<h3 class="muted">English</h3>
-			<div class="span3">
-				<div class="media">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="">CSquare</a>
+          <div class="nav-collapse collapse">
+            <p class="navbar-text pull-right">
+                Welcome back, JohnTheFirstGrader
+            </p>
+            <ul class="nav">
+                <li class=""><a href="#">Dashboard</a></li>
+                  <li class="dropdown">
+                      <a id="classDrop" class="dropdown-toggle" data-toggle="dropdown" role="button" href="">
+                          My Classes
+                          <b class="caret"></b>
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="classDrop" role="menu">						       <li role="presentation">
+                                    <a href="" tabindex="-1" role="menuitem">English</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="" tabindex="-1" role="menuitem">Maths</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="" tabindex="-1" role="menuitem">Science</a>
+                                </li>
+                      </ul>
+                  </li>
+                  <li>Profile</li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div> <!-- end navbar navbar-inverse navbar-fixed-top -->
+    
+    <div class="container-fluid">
+    	<h3 class="pagination-centered">English</h3>
+    	<hr>
+        <div class="row-fluid">
+            <div class="span1"></div>
+            <div class="span3">
+                
+                <div class="media">
 					<img src="/static/profile_img/student_dragon_2.png" class="media-object">
 					<div class="media-body">
-						<table class="table table-condensed">
+						<table class="table table-striped">
 							<tr>
-								<td>Health</td>
-								<td>5/8</td>
-							</tr>
-							<tr><td><small><em>4:31 to +1 Health</em></small></td></tr>
-							<tr>
-								<td>Level</td>
+								<td><strong>Level</strong></td>
 								<td>3</td>
 							</tr>
 							<tr>
-								<td>Experience</td>
-								<td>58/60</td>
+								<td><strong>Missions Completed</strong></td>
+								<td>2</td>
+							</tr>
+							<tr>
+								<td><strong>Experience</strong></td>
+								<td>28/60</td>
 							</tr>
 						</table>
 					</div>
 				</div>
+            </div>
+            <div class="span7">
+            	<ul class="thumbnails">
+					<li class="span4">
+						<a href="#" class="thumbnail">
+							<img src="/static/profile_img/grammar_dragon.gif">
+						</a>
+						<h4>Grammar Dragon</h4>
+						<div class="media-body">Enemy Health: 
+							<div class="progress progress-warning">
+  									<div class="bar" style="width: 20%;"></div>
+  							</div>
+  						</div>				
+  					</li>
+  					<li class="span4">
+						<a href="#" class="thumbnail">
+							<img src="/static/profile_img/verbon_dragon.jpg" style="width: 212px;height:158px;">
+						</a>
+						<h4>Verb-on</h4>
+						<div class="media-body">Enemy Health: 
+							<div class="progress progress-warning">
+  									<div class="bar" style="width: 90%;"></div>
+  							</div>
+  						</div>				
+  					</li>
+  					<li class="span4">
+						<a href="#" class="thumbnail">
+							<img src="/static/profile_img/boss_dragon_1.jpg">
+						</a>
+						<h4>Boss Fight</h4>
+						<p>Impending Attack in 13 days!</p>			
+  					</li>
+  					<li class="span4" style="margin-left: 0px;">
+						<a href="#" class="thumbnail">
+							<img src="/static/profile_img/boss_dragon_2_faded.jpg">
+						</a>
+						<h4>Boss Fight</h4>
+						<p>Complete!</p>			
+  					</li>
+				</ul>
 			</div>
-			<div class="span8" style="border-left: 1px solid #D8D8D8;">
-				<div class="media span2">
-					
-					<img src="/static/profile_img/grammar_dragon.gif" style="height: 120px;width:180px;" class="img-polaroid">
-					<h5 class="media-heading">Grammar Dragon</h5>
-					<div class="media-body">Health: <div class="progress progress-warning">
-  									<div class="bar" style="width: 20%;"></div></div></div>
-				</div>
-				<div class="media span2">
-					
-					<img src="/static/profile_img/verbon_dragon.jpg" style="height: 120px;width:180px;" class="img-polaroid">
-					<h5 class="media-heading">Verbon</h5>
-					<div class="media-body">Health: <div class="progress progress-warning">
-  									<div class="bar" style="width: 90%;"></div></div></div>
-				</div>
-				<div class="media span2">
-							<img src="/static/profile_img/boss_dragon_1.jpg" style="height: 200px;width:200px;" class="media-object img-rounded">
-							<br>
-							<h5 class="media-heading text-center">Boss Fight<br>Attack in 13 days!</h5>
-						</div>
-			</div>
-		</div>
-		<!-- jumbotron class English-->
-		<!-- jumbotron Class Math -->
-		<div class="container">
-			<h3 class="muted">Math</h3>
-			<div class="span3">
-				<div class="media">
-					<img style="height: 150px;width: 150px;"src="/static/profile_img/student_heroes_3.jpg" class="img-circle pagination-centered">
+            <div class="span1"></div>
+        </div>
+
+    </div> <!-- end of container-fluid -->
+    <div class="container-fluid">
+    	<div class="row-fluid">
+    		<div class="span4"></div>
+        		<div class="span4 pagination-centered"><h3>Up Next - King of the Horde... </h3>
+					<div class="progress progress-warning">
+  						<div class="bar" style="width: 80%;"><span>80%</span></div>
+  					</div>
+  				</div>
+  		<div class="span4"></div> 
+    	</div>
+    </div>
+    <hr>
+    <div class="container-fluid">
+    	<h3 class="pagination-centered">Maths</h3>
+    	<hr>
+        <div class="row-fluid">
+            <div class="span1"></div>
+            <div class="span3">
+                
+                <div class="media">
+					<img src="/static/profile_img/student_heroes_1.jpg" class="media-object">
 					<div class="media-body">
-						<table class="table table-condensed">
+						<table class="table table-striped">
 							<tr>
-								<td>Health</td>
-								<td>7/7</td>
-							</tr>
-							<tr>
-								<td>Level</td>
+								<td><strong>Level</strong></td>
 								<td>4</td>
 							</tr>
 							<tr>
-								<td>Experience</td>
+								<td><strong>Missions Completed</strong></td>
+								<td>5</td>
+							</tr>
+							<tr>
+								<td><strong>Experience</strong></td>
 								<td>25/80</td>
 							</tr>
 						</table>
 					</div>
 				</div>
+            </div>
+            <div class="span7">
+            	<ul class="thumbnails">
+					<li class="span4">
+						<a href="#" class="thumbnail">
+							<img src="/static/profile_img/helicarrier.jpg">
+						</a>
+						<h4>Help Plot the Helicarrier's Rescue Route</h4>
+						<div class="media-body">My Progress: 
+							<div class="progress progress-warning">
+  									<div class="bar" style="width: 30%;"></div>
+  							</div>
+  						</div>				
+  					</li>
+  					<li class="span4">
+						<a href="#" class="thumbnail">
+							<img src="/static/profile_img/hawkeye.jpg">
+						</a>
+						<h4>Hawkeye Needs Help! Stop Loki's Minions!</h4>
+						<div class="media-body">My Progress: 
+							<div class="progress progress-warning">
+  									<div class="bar" style="width: 90%;"></div>
+  							</div>
+  						</div>				
+  					</li>
+  					<li class="span4">
+						<a href="#" class="thumbnail">
+							<img src="/static/profile_img/boss_heroes_1.jpg">
+						</a>
+						<h4>Boss Fight</h4>
+						<p>Impending Attack in 14 days!</p>			
+  					</li>
+  					<li class="span4">
+						<a href="#" class="thumbnail">
+							<img src="/static/profile_img/boss_heroes_2_faded.jpg">
+						</a>
+						<h4>Boss Fight</h4>
+						<p>Defeated!</p>			
+  					</li>
+				</ul>
 			</div>
-			<div class="span8" style="border-left: 1px solid #000000;">
-				<div class="media span2">
-					
-					<img src="/static/profile_img/helicarrier.jpg" style="height: 130px;width:140px;" class="img-polaroid">
-					<h5 class="media-heading">Help plan the Helicarrier route</h5>
-					<div class="media-body">Progress: <div class="progress progress-warning">
-  									<div class="bar" style="width: 90%;"></div></div></div>
-				</div>
-				<div class="media span2">
-					
-					<img src="/static/profile_img/hawkeye.jpg" style="height: 130px;width:140px;" class="img-polaroid">
-					<h5 class="media-heading">Help Hawkeye take out Loki's minions</h5>
-					<div class="media-body">Progress: <div class="progress progress-warning">
-  									<div class="bar" style="width: 90%;"></div></div></div>
-				</div>
-				
-				<div class="media span2">
-							<img src="/static/profile_img/boss_heroes_2.jpg" class="media-object img-rounded">
-							<br>
-							<h5 class="media-heading text-center">Boss Fight<br>Attack in 14 days!</h5>
-						</div>
-						<div class="media span2">
-							<img src="/static/profile_img/boss_heroes_1.jpg" class="media-object img-rounded">
-							<h5 class="media-heading text-center">Boss Fight<br>Defeated!</h5>
-				</div>
-
-			</div>
-		</div>
-		<!-- jumbotron class Math-->
-		<!-- footer -->
-		<div class="footer">
-		</div>
-		<!-- footer -->
+            <div class="span1"></div>
+        </div>    
+    </div> <!-- end of container-fluid -->
+    <div class="container-fluid">
+    	<div class="row-fluid">
+    		<div class="span4"></div>
+        		<div class="span4 pagination-centered"><h3>Up Next - Thanos Awakens... </h3>
+					<div class="progress progress-warning">
+  						<div class="bar" style="width: 50%;"><span>80%</span></div>
+  					</div>
+  				</div>
+  		<div class="span4"></div> 
+    	</div>
+    </div>
+    <!-- footer -->
+	<div class="footer">
 	</div>
+	<!-- footer -->
+
 </body>
+
+		
 
 
 </html>
