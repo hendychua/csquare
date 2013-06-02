@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+<head>
+	<title>C-Square</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta charset="utf-8">
+
+	<link rel = "stylesheet" href = "/static/bootstrap/css/bootstrap.css" media="screen">
+	<link rel = "stylesheet" href = "/static/bootstrap/css/bootstrap-responsive.css" media="screen">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/static/bootstrap/js/bootstrap.js"></script>
+
+	<!-- Le styles -->
+        <style type="text/css">
+          body {
+            font-size: 12px;
+            padding-top: 60px;
+            padding-bottom: 40px;
+          }
+          .sidebar-nav {
+            padding: 9px 0;
+          }
+
+          @media (max-width: 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+              float: none;
+              padding-left: 5px;
+              padding-right: 5px;
+            }
+        }
+            /*Table modifications*/
+      		.table th, .table td { 
+     				border-top: none; 
+ 			}
+ 			 </style>
+
+</head>
+
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="">CSquare</a>
+          <div class="nav-collapse collapse">
+            <p class="navbar-text pull-right">
+                Welcome back, {{ g.username }}
+                 <img src="/static/profile_img/teacher_dragon_1.png" width="30" height="30">
+            </p>
+            <ul class="nav">
+                <li class=""><a href="/dashboard">Dashboard</a></li>
+                  <li class="dropdown">
+                      <a id="classDrop" class="dropdown-toggle" data-toggle="dropdown" role="button" href="">
+                          My Classes
+                          <b class="caret"></b>
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="classDrop" role="menu">
+                          <li role="presentation">
+                                 <a href="/classes/1" tabindex="-1" role="menuitem">1A-Mathematics</a>
+                             </li>
+                          <li role="presentation">
+                                 <a href="/classes/2" tabindex="-1" role="menuitem">3B-Science</a>
+                          </li>
+                          <li role="presentation">
+                                   <a href="/classes/2" tabindex="-1" role="menuitem">{{g.class_name}}</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li class="dropdown">
+                      <a id="createDrop" class="dropdown-toggle" data-toggle="dropdown" role="button" href="">
+                            Create
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="createDrop" role="menu">
+                            <li role="presentation">
+                                <a href="{{url_for('create_class')}}" tabindex="-1" role="menuitem">A new class</a>
+                            </li>
+                            <li role="presentation">
+                                  <a href="{{url_for('create_assignment')}}" tabindex="-1" role="menuitem">A new mission!</a>
+                              </li>
+                        </ul>
+                  </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div> <!-- end navbar navbar-inverse navbar-fixed-top -->
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span1">
+            </div>
+            <div class="span10">
+                <h5>Create a new mission!</h6>
+                    <form method="post" action="{{url_for('create_assignment')}}">
+                        <select name="classToCreateIn">
+                            <option value="">Select a class</option>
+                            <option value="1A-Mathematics">1A-Mathematics</option>
+                            <option value="3B-Science">3B-Science</option>
+                        </select><br>
+                        <input type="text" name="assignmentName" id="assignmentName" placeholder="Assignment Name" class="span12"><br>
+                        <table class="table table-striped table-bordered" id="questionsTable">
+                            <thead>
+                                <tr>
+                                    <th width="50%">Question</th>
+                                    <th width="25%">Answer</th>
+                                    <th width="10%">Points</th>
+                                    <th width="15%">Multiple-choices</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="4"><button class="btn" id="addQBtn" type="reset">+</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="btn btn-primary" type="submit">Create</button>
+                    </form>
+            </div>    
+            <div class="span1">
+            </div>
+        </div>
+    </div>
+		
+	</div>
+	<script type="text/javascript">
+	    $(document).ready(function() {
+	        var qCount = 0;
+	        $("#addQBtn").click(function() { 
+	            qCount += 1;
+	            var newrow = "<tr>"
+	            newrow += "<td><input class='span12' type='text' name='question"+qCount+"'></td>";
+	            newrow += "<td><input class='span12' type='text' name='answer"+qCount+"'></td>";
+	            newrow += "<td><input class='input-mini' type='text' name='points"+qCount+"'></td>";
+	            newrow += "<td><input type='checkbox' name='multipleOption"+qCount+"'></td>";
+	            newrow += "</tr>";
+	            $("#questionsTable tr:last").before(newrow);
+	            return false;
+	        });
+	    });
+	</script>
+</body>
+
+
+</html>

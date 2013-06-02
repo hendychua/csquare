@@ -16,7 +16,6 @@
 	<script type="text/javascript" src="/static/bootstrap/js/bootstrap.js"></script>
 
 	<!-- Le styles -->
-        <link href="../assets/css/bootstrap.css" rel="stylesheet">
         <style type="text/css">
           body {
             font-size: 12px;
@@ -81,10 +80,10 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="createDrop" role="menu">
                             <li role="presentation">
-                                <a href="" tabindex="-1" role="menuitem">A new class</a>
+                                <a href="{{url_for('create_class')}}" tabindex="-1" role="menuitem">A new class</a>
                             </li>
                             <li role="presentation">
-                                  <a href="" tabindex="-1" role="menuitem">A new mission!</a>
+                                  <a href="{{url_for('create_assignment')}}" tabindex="-1" role="menuitem">A new mission!</a>
                               </li>
                         </ul>
                   </li>

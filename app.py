@@ -147,34 +147,35 @@ def dashboard():
 
             return render_template("teacher_dashboard.html")
 
-@app.route("/assignment/create")
+@app.route("/assignment/create", methods=["post", "get"])
 @login_required
 def create_assignment():
-    if g.usertype == "student":
-        return "Oops you do not have permission to view this page"
-        
-    elif g.usertype == "class_admin":
-        return "Page to allow teachers to create assignments"
+    if request.method.lower() == "get":
+        return render_template("create_assignment.html")
+    else:
+        return render_template("assignment.html")
 
 @app.route("/assignments/<objectId>")
 @login_required
 def assignment(objectId):
-    return "assignment " + objectId
+    return render_template("assignment.html")
     
 @app.route("/students/<objectId>")
 @login_required
 def student(objectId):
     return render_template("student_dashboard.html")
         
-@app.route("/class/create")
+@app.route("/classes/create", methods=["post", "get"])
 @login_required
 def create_class():
-    if g.usertype == "student":
-        return "Oops you do not have permission to view this page"
+    if request.method.lower() == "get":
+        return render_template("create_class.html")
+    else:
+        g.class_name = request.form.get("className")
+        g.story = request.form.get("storyline")
+        g.goal = request.form.get("goal")
+        return render_template("class_temp.html")
 
-    elif g.usertype == "class_admin":
-        return "Page to allow teachers to create classes"
-        
 @app.route("/classes/<objectId>")
 @login_required
 def classes(objectId):

@@ -14,7 +14,7 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="/static/bootstrap/js/bootstrap.js"></script>
-	
+
 	<!-- Le styles -->
         <style type="text/css">
           body {
@@ -33,17 +33,17 @@
               padding-left: 5px;
               padding-right: 5px;
             }
-          }
-          /*Table modifications*/
+        }
+            /*Table modifications*/
       		.table th, .table td { 
      				border-top: none; 
  			}
-        </style>
+ 			 </style>
 
 </head>
 
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
           <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -71,6 +71,9 @@
                           <li role="presentation">
                                  <a href="/classes/2" tabindex="-1" role="menuitem">3B-Science</a>
                           </li>
+                          <li role="presentation">
+                                   <a href="/classes/2" tabindex="-1" role="menuitem">{{g.class_name}}</a>
+                          </li>
                       </ul>
                   </li>
                   <li class="dropdown">
@@ -92,81 +95,62 @@
         </div>
       </div>
     </div> <!-- end navbar navbar-inverse navbar-fixed-top -->
-    
-    {% for c in g.classes %}
+
     <div class="container-fluid">
         <div class="row-fluid">
             <div class="span1"></div>
             <div class="span3">
-                <h5>{{ c['class_name'] }}</h5>
-                {% if loop.index0==0 %}
-                <b>Story:</b> <i>By leveraging on the citizens' ignorance on mathematics, the evil conqueror has gatherd an army and planned to dominate the world.</i><br>
-                <b>Goal:</b> <i>{{ c['goal'] }}</i>
-                {% else %}
-                <b>Story:</b> <i>The evil scientist has invented a time machine to go back to the past and destroy humans. Stop him by accumulating knowledge in science!</i><br>
-                <b>Goal:</b> <i>You will be considered capable of stopping the evil scientist by scoring 300 points for this class!</i>
-                {% endif %}
                 <div class="media">
+					<img src="/static/profile_img/teacher_dragon_1.png" class="media-object" width="100" height="100">
 					<div class="media-body">
-						<table class="table table-bordered table-striped">
-							<tr>
-								<td>Subject</td>
-								<td>{{ g.class_subjects[loop.index0] }}</td>
+						<table class="table table-striped">
+						    <tr>
+								<td>Class</td>
+								<td>{{g.class_name}}</td>
 							</tr>
 							<tr>
-								<td>Number of students</td>
-								<td>{{ g.top_classes_student_count[loop.index0] }}</td>
+								<td>Master</td>
+								<td>cylho</td>
 							</tr>
 							<tr>
-								<td>Number of missions</td>
-								<td>{{ g.top_classes_assignments[loop.index0] | length }}</td>
+								<td>Number of Students</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>Missions Available</td>
+								<td>0</td>
 							</tr>
 						</table>
 					</div>
 				</div>
-				<div class="well">
-				    <h6>Latest missions</h6>
-				    {% if loop.index0==0 %}
-    				<a href="/assignments/1">Double digit Mutiplication</a> - 12/20 students completed
-    				<div class="progress">
-                        <div class="bar" style="width: 60%;"></div>
-                    </div>
-                    {% else %}
-    				<a href="/assignments/4">Understanding different types of plants</a> - 10/30 students completed
-    				<div class="progress">
-                        <div class="bar bar-warning" style="width: 30%;"></div>
-                    </div>
-                    {% endif %}
-                </div>
+				<hr>
+				<h4 style="margin-top: 0px;">Rankings</h4>
+				<i>No students listed in this class.</i><br>
+				<a href="#">Import student list</a>
             </div>
             <div class="span7">
-                <div class="well">
-                    {% if loop.index0==0 %}
-                    <h6>4 hours ago</h6>
-                        <img width="30" height="30" src="/static/profile_img/student_dragon_2.png"> <a href="/students/1">johnthefirstgrader</a> just completed mission <a href="/assignments/1">"Double digit Multiplication"</a> and scored 70/100 points. He is now 60 class points away from reaching the class goal.
+                <div class="span12">
+                    <h6>Story:</h6>
+                    <i>{{g.story}}</i><br>
+                    <h6>Goal:</h6>
+                    <i>{{g.goal}}</i><br>
                     <hr>
-                    <h6>5 hours ago</h6>
-                        <img width="30" height="30" src="/static/profile_img/student_dragon_1.jpg"> <a href="/students/2">maryhadalittlelamb</a> just completed mission <a href="/assignments/2">"Mental Sums 6"</a> and scored 100/100 points. She is now the highest ranked student in the class!
-                    <hr>
-                    <h6>6 hours ago</h6>
-                    <img width="30" height="30" src="/static/profile_img/student_heroes_1.jpg"> <a href="/students/3">simon1995</a> scored only 50/100 for the mission <a href="/assignments/3">"Mental Sums 5"</a>. Motivate him!
-                    <hr>
-                    {% else %}
-                    <h6>6 hours ago</h6>
-                        <img width="30" height="30" src="/static/profile_img/student_dragon_2.png"> <a href="/students/4">henrytheking</a> just completed mission <a href="/assignments/4">"Understanding different types of plants"</a> and scored 20/100 points. Motivate him!
-                    <hr>
-                    <h6>10 hours ago</h6>
-                        <img width="30" height="30" src="/static/profile_img/student_dragon_1.jpg"> <a href="/students/5">emoboi93</a> asks for additional help on the mission <a href="/assignments/4">"Understanding different types of plants"</a>.
-                    <hr>
-                    {% endif %}
                 </div>
+                <div class="span12">
+                	<h6>Students</h6>
+            	</div>
+           	    <div class="span12">
+           			<h6>Missions</h6>
+           		</div>
             </div>
-            <div class="span1"></div>
-        </div>    
+            
     </div> <!-- end of container-fluid -->
-    
-    {% endfor %}
-
+		
+		<!-- footer -->
+		<div class="footer">
+		</div>
+		<!-- footer -->
+	</div>
 </body>
 
 
