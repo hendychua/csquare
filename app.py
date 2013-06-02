@@ -17,6 +17,10 @@ import requests
 app = Flask(__name__)
 app.config.from_pyfile('config.cfg')
 
+@app.route("/assignment")
+def assignment_pg():
+	return render_template("assignment.html")
+
 @app.route("/")
 def index():
     if session.get(SESSION_LOGIN_USERID, None) is None:
